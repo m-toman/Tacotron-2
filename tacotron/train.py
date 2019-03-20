@@ -172,7 +172,7 @@ def train(log_dir, args, hparams):
 	step = 0
 	time_window = ValueWindow(100)
 	loss_window = ValueWindow(100)
-	saver = tf.train.Saver(max_to_keep=5)
+	saver = tf.train.Saver(max_to_keep=5, save_relative_paths=True)
 
 	log('Tacotron training set to a maximum of {} steps'.format(args.tacotron_train_steps))
 
